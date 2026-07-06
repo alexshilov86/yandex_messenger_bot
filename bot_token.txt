@@ -1,0 +1,5 @@
+y0__wgBEOK5hvoIGJaREyCI1IKXGCZ-TzV1lOeL4Oek0EK-fGA7r-xb
+
+
+
+curl -X POST -H "Authorization: OAuth y0__wgBEOK5hvoIGJaREyCI1IKXGCZ-TzV1lOeL4Oek0EK-fGA7r-xb" -H "Content-Type: application/json" -d '{"login": "lastik333@yandex.ru", "text": "Привет!"}' https://botapi.messenger.yandex.net/bot/v1/messages/sendText/
