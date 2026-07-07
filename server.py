@@ -6,9 +6,9 @@ app = FastAPI(title="Message Receiver API")
 
 # Описываем модель входящего сообщения
 class Message(BaseModel):
-    sender: str = Field(..., example="Система Мониторинга")
-    text: str = Field(..., example="Внимание! На сервере заканчивается место.")
-    priority: str = Field(default="normal", example="high")
+    sender: str = Field(..., json_schema_extra={"example": "Система Мониторинга"})
+    text: str = Field(..., json_schema_extra={"example": "Внимание! На сервере заканчивается место."})
+    priority: str = Field(default="normal", json_schema_extra={"example": "high"})
 
 # Очередь в памяти для хранения последних 10 сообщений (для примера)
 received_messages_db = []
