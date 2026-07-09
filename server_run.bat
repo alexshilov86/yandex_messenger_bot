@@ -20,6 +20,6 @@ pip install --quiet fastapi uvicorn requests || (
 
 echo Запуск бота из server2.py...
 REM Для продакшена уберите --reload
-uvicorn server2:app --host 0.0.0.0 --port 8000 --reload
+uvicorn server2:app --host 0.0.0.0 --port 8000 --log-level info
 
 pause

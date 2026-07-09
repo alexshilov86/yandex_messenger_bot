@@ -54,6 +54,4 @@ async def handle_webhook(request: Request):
 
     return {"status": "ok"}
 
-if __name__ == "__main__":
-    # Запуск для локальной проверки (на сервере используйте gunicorn/uvicorn как сервис)
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+
