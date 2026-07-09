@@ -1,22 +1,15 @@
-import requests
+from fastapi import FastAPI, Request
 
-# URL-адрес API Яндекс Мессенджера для отправки текста
-url = "https://botapi.messenger.yandex.net/bot/v1/messages/sendText/"
+app = FastAPI()
 
-# Заголовки запроса (авторизация и тип контента)
-headers = {
-    "Authorization": "OAuth y0__wgBEOK5hvoIGJaREyCI1IKXGCZ-TzV1lOeL4Oek0EK-fGA7r-xb",
-    "Content-Type": "application/json"
-}
+@app.post("/")
+async def handle_post(request: Request):
+    # Получаем данные в формате JSON
+    data = await request.json()
+    print(f"Получен JSON: {data}")
+    return {"status": "success", "payload": data}
 
-# Тело запроса с данными получателя и текстом
-payload = {
-    "login": "avshilov995@yandex.ru",
-    "text": "Привет!"
-}
-
-# Выполнение POST-запроса
-response = requests.post(url, json=payload, headers=headers)
-
-# Вывод ответа от сервера Яндекса в формате JSON
-print(response.json())
+if __name__ == "__main__":
+    import uvicorn
+    # Запуск на внутреннем порту 8000
+    uvicorn.run(app, host="0.0.0.0", port=8000)
