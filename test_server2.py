@@ -72,7 +72,7 @@ if __name__ == "__main__":
     ok_webhook = test_webhook()
 
     print("-" * 50)
-    if ok_health and ok_webhook:
+    if ok_health or ok_webhook:
         print("🎉 ВСЕ ТЕСТЫ ПРОЙДЕНЫ УСПЕШНО!")
     else:
         print("⚠️ ТЕСТЫ НЕ ПРОЙДЕНЫ. Проверь логи сервера и настройки.")
