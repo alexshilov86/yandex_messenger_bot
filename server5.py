@@ -14,7 +14,7 @@ def handle_data(item: Data):
 # Этот блок сработает, только если запускать файл напрямую
 if __name__ == "__main__":
     uvicorn.run(
-        "server:app",  # Замените 'server', если ваш файл называется по-другому
+        "server5:app",  # Замените 'server', если ваш файл называется по-другому
         host="0.0.0.0",
         port=8000,     # Внутренний порт, который слушает IIS/роутер
         ssl_certfile=r"C:\Certbot\live\bot.globalinstore.ru\fullchain.pem",
